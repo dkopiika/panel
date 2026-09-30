@@ -1,0 +1,45 @@
+<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow"><title>Панель СММ</title><style>:root{--bg:#faf8f5;--fg:#1f1d1a;--mut:#77716a;--card:#fff;--line:#e7e2da;--acc:#8a5a3c;
+--svob:#5b8c5a;--rabota:#c98a2b;--vyshla:#9a948c}
+@media (prefers-color-scheme:dark){:root{--bg:#171513;--fg:#ece7e0;--mut:#9d968d;--card:#221f1c;--line:#34302b;--acc:#d49a72}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 -apple-system,system-ui,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
+main{max-width:860px;margin:0 auto;padding:16px 16px 60px}nav{display:flex;gap:6px;overflow-x:auto;padding:10px 16px;border-bottom:1px solid var(--line);position:sticky;top:0;background:var(--bg);z-index:5}
+nav a{white-space:nowrap;padding:6px 12px;border-radius:99px;color:var(--fg);text-decoration:none;border:1px solid var(--line);font-size:14px}nav a.on{background:var(--fg);color:var(--bg)}
+h1{font-size:26px;margin:.4em 0}h2{font-size:19px;margin:1.4em 0 .5em}h2 small{color:var(--mut);font-weight:400}h3{font-size:17px}
+a{color:var(--acc)}code{background:var(--line);padding:1px 5px;border-radius:4px;font-size:.88em;word-break:break-all}
+blockquote{margin:1em 0;padding:.6em 1em;border-left:3px solid var(--acc);background:var(--card);border-radius:0 8px 8px 0}
+.tw{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:15px}th,td{border-bottom:1px solid var(--line);padding:8px 6px;text-align:left;vertical-align:top}th{color:var(--mut);font-weight:600}
+@media (max-width:640px){table thead{display:none}table tr{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;margin:10px 0;padding:6px 12px}
+table td{display:block;border:0;padding:4px 0}table td::before{content:attr(data-l);display:block;font-size:12px;color:var(--mut)}}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.chips button{border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:99px;padding:6px 12px;font-size:14px}.chips button.on{background:var(--fg);color:var(--bg)}
+#q{width:100%;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--fg);font-size:16px}
+.card{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--svob);border-radius:12px;padding:10px 12px;margin:8px 0}
+.card.s-rabota{border-left-color:var(--rabota)}.card.s-vyshla{border-left-color:var(--vyshla);opacity:.75}
+.card .num{font-size:12px;color:var(--mut)}.card .t{font-weight:600;margin:2px 0 6px}.meta{display:flex;gap:8px;flex-wrap:wrap;font-size:13px;color:var(--mut)}
+.chip{display:inline-block;font-size:12px;padding:1px 8px;border-radius:99px;background:var(--line);color:var(--fg)}.chip.s-svob{background:var(--svob);color:#fff}.chip.s-rabota{background:var(--rabota);color:#fff}.chip.s-vyshla{background:var(--vyshla);color:#fff}.chip.f{background:var(--acc);color:#fff}
+.empty{color:var(--mut)}details{margin:12px 0}summary{cursor:pointer}
+.node{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 14px}.node summary{list-style:none;display:grid;grid-template-columns:34px 1fr;gap:2px 10px;align-items:center}
+.node summary::-webkit-details-marker{display:none}.ln-n{grid-row:span 3;width:34px;height:34px;border-radius:50%;background:var(--fg);color:var(--bg);display:flex;align-items:center;justify-content:center;font-weight:700}
+.ln-t{font-weight:700}.ln-c{font-size:13px;color:var(--mut)}.bar{display:flex;height:6px;border-radius:3px;overflow:hidden;background:var(--line)}.bar i{display:block}.bar i.s-svob{background:var(--svob)}.bar i.s-rabota{background:var(--rabota)}.bar i.s-vyshla{background:var(--vyshla)}
+.tree{list-style:none;padding:0;margin:12px 0 0;border-left:2px solid var(--line)}.tree li{padding:6px 0 6px 14px;position:relative}.tree li::before{content:"";position:absolute;left:0;top:16px;width:10px;border-top:2px solid var(--line)}
+.tiles{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:16px}.tile{display:flex;flex-direction:column;gap:4px;padding:20px;border-radius:16px;background:var(--card);border:1px solid var(--line);color:var(--fg);text-decoration:none}.tile .ic{font-size:30px}.tile small{color:var(--mut)}
+.sub,.upd{color:var(--mut);font-size:14px}
+#lock{max-width:360px;margin:20vh auto;padding:16px;text-align:center}#lock input{width:100%;padding:12px;font-size:17px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--fg);margin:12px 0}
+#lock button{padding:10px 20px;font-size:16px;border-radius:10px;border:0;background:var(--fg);color:var(--bg)}#err{color:#c44;min-height:1.4em}</style>
+<script src="https://telegram.org/js/telegram-web-app.js"></script></head><body>
+<div id="app"></div><form id="lock" hidden><h1>🔒 Панель</h1><input id="pw" type="password" placeholder="Пароль" autocomplete="current-password"><button>Открыть</button><p id="err"></p></form>
+<script>
+const D={s:"Kw2HRfYsqpnY/V5EnnkkEA==",v:"2fCeXTQ36cpUfTto",c:"xVxX3/wQbgl9VxtYCYVQsLpsoadN3pBxV5cbBWGBW2USayoXQwc6W/yA4yuUQwxvnhPwg3bl0qQ2Y/7yxQvp2npLB8MhXOaOoTkDJeVEjiiVa0iUq1EwJtCngGBQRYmX0sXB1jMLQjYdXXG5OWGohLRoXsjg/k636tK5K6kMCu/j3kZFwk3JfJ+97gV5Tmr/DF3KXMMlMnsQMqgizrb0sMoglmajusMdpct7PR9Q8uYwGgatHesLR6IjIOIyoGOmGOfEA1nTFXFB8fzyRM64kqiNoGekddd1NWJfozgf3ScpmSx041C5i1LEEyPispDWO+QgRPxfM5nDxm34pD1GYQnZKSeaXpA6aSZzNWV6GjHhB3j6KEDck5FAo8GjfLZYaQY5VZsaouvi6PW8gU0Qx38Zzbc2kpBHAm+dIxPllyF0kyTpaXteqXfoEBMQ0rUBws51Qh3HOxQfniTR9iSKVNxBw7m9Qx0w854CKdvug2c70tU0Q/y9qV5ddgzuCHlvuABwo1RMKs2g/1wX1MJONIp7K4bnVN4Xh2RWx2BaRLdG0aH6yzavDcGFfQx0gU92k2QOSMtbMYOX8S7gOD3XVnTDM9b/p1xtjG+6Fb1jB4mcLtQrwL07I/wjtch73aURJj60rQGhpwJXrJMkmEIxFzfkLwbrRKXDp99DRFqMO6tOb68tpfHfncSbNvWZWaJUzDsxac/t3WAHrDKTeB38N9TKBzNa2md3a0ZXpzw2axHk0aaXwZurDL93WmxD9Nsh/v23RNQg+Gp/talOaJ0Ml1m+wR05JFE/6fExKeTBykL/Jn3W9vbJR+9CK/pgQT716MyQgLNrJI4C+D1UIWLbLKWDgvCOhhKyttSqARWVvrdD309uniCIS0XrCG6uyGMG3ExEOknah1uMg/0pp1eRX+4iK/eOn6vKBWf+ZzRWtkdIA5aQISgkdd9U6P7V0eJ9X0SoZDR4h0ActD7YNXjegosjiNol+UyuGY+9AG6LljzVJ52oMqEKULIvAq9IeV0zcLmM11KyfKdgdXDgiwL9F/JRTuLXdycrZirnYb4SMgiNYoKYHh9r+j4QzcXvM8kF4Vwb++WfpNpRVwEXFXrE4zyUuwyc0W1g+R9/OmKLn6oj6euDgwc4w8z9yw6SzPTtl9eHgu5RijM=",n:150000};
+const b=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+async function open_(p){const k=await crypto.subtle.importKey("raw",new TextEncoder().encode(p),"PBKDF2",false,["deriveKey"]);
+const key=await crypto.subtle.deriveKey({name:"PBKDF2",salt:b(D.s),iterations:D.n,hash:"SHA-256"},k,{name:"AES-GCM",length:256},false,["decrypt"]);
+const t=await crypto.subtle.decrypt({name:"AES-GCM",iv:b(D.v)},key,b(D.c));document.getElementById("app").innerHTML=new TextDecoder().decode(t);
+document.getElementById("lock").hidden=true;document.querySelectorAll("#app script").forEach(o=>{const s=document.createElement("script");s.textContent=o.textContent;document.body.appendChild(s)});
+try{localStorage.setItem("pk",p)}catch(e){}}
+async function go(){try{window.Telegram&&Telegram.WebApp&&Telegram.WebApp.expand()}catch(e){}
+let p=null;const h=new URLSearchParams(location.hash.slice(1));if(h.get("k")){p=h.get("k");history.replaceState(null,"",location.pathname)}
+if(!p){try{p=localStorage.getItem("pk")}catch(e){}}
+if(p){try{await open_(p);return}catch(e){try{localStorage.removeItem("pk")}catch(_){}}}
+const f=document.getElementById("lock");f.hidden=false;f.onsubmit=async e=>{e.preventDefault();try{await open_(document.getElementById("pw").value)}catch(_){document.getElementById("err").textContent="Не тот пароль"}}}
+go();
+</script></body></html>
