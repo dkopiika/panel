@@ -3,12 +3,12 @@
 --fux:#ff2bd6;--blue:#2e5bff;--lime:#9be22d;--grey:#8d8a99;--acc:#ff2bd6;
 --svob:#2e5bff;--rabota:#9be22d;--utv:#ff2bd6;--vyshla:#8d8a99;--glow:radial-gradient(1200px 500px at 90% -10%,rgba(255,43,214,.16),transparent 60%),radial-gradient(900px 500px at -10% 10%,rgba(46,91,255,.14),transparent 60%),radial-gradient(700px 400px at 50% 110%,rgba(155,226,45,.14),transparent 60%)}
 @media (prefers-color-scheme:dark){:root{--bg:#0e0d14;--fg:#f2f0fa;--mut:#9d99b0;--card:rgba(255,255,255,.06);--line:rgba(255,255,255,.1);--lime:#b8ff4a;--rabota:#b8ff4a}}
-*{box-sizing:border-box}body{margin:0;background:var(--glow),var(--bg);background-attachment:fixed;color:var(--fg);font:16px/1.55 -apple-system,system-ui,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 -apple-system,system-ui,"Segoe UI",Roboto,sans-serif;-webkit-text-size-adjust:100%}
 main{max-width:860px;margin:0 auto;padding:16px 16px 60px}
 nav{display:flex;gap:6px;overflow-x:auto;padding:10px 16px;position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 70%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 nav a{white-space:nowrap;padding:5px 12px;border-radius:99px;color:var(--fg);text-decoration:none;background:var(--card);border:1px solid var(--line);font-size:13px;font-weight:600}
-nav a.on{background:linear-gradient(90deg,var(--fux),var(--blue));color:#fff;border-color:transparent}
-h1{font-size:28px;margin:.4em 0;letter-spacing:-.02em;background:linear-gradient(90deg,var(--fux),var(--blue));-webkit-background-clip:text;background-clip:text;color:transparent}
+nav a.on{background:rgba(255,43,214,.1);color:var(--fux);border-color:rgba(255,43,214,.35)}
+h1{font-size:28px;margin:.4em 0;letter-spacing:-.02em;font-weight:700}
 h2{font-size:19px;margin:1.4em 0 .5em;letter-spacing:-.01em}h2 small{color:var(--mut);font-weight:500}h3{font-size:17px}
 a{color:var(--blue)}code{background:var(--line);padding:1px 5px;border-radius:5px;font-size:.88em;word-break:break-all}
 blockquote{margin:1em 0;padding:.7em 1em;border-left:3px solid var(--fux);background:rgba(255,43,214,.07);border-radius:0 12px 12px 0}
@@ -16,12 +16,12 @@ blockquote{margin:1em 0;padding:.7em 1em;border-left:3px solid var(--fux);backgr
 @media (max-width:640px){table thead{display:none}table tr{display:block;background:var(--card);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:16px;margin:10px 0;padding:6px 12px}
 table td{display:block;border:0;padding:4px 0}table td::before{content:attr(data-l);display:block;font-size:12px;color:var(--mut)}}
 .chips{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}.chips button{border:1px solid var(--line);background:var(--card);color:var(--fg);border-radius:99px;padding:6px 12px;font-size:14px;font-weight:600}
-.chips button.on{background:var(--fg);color:var(--bg)}
+.chips button.on{background:rgba(46,91,255,.1);color:var(--blue);border-color:rgba(46,91,255,.35)}
 #q{width:100%;padding:11px 14px;border-radius:14px;border:1px solid var(--line);background:var(--card);color:var(--fg);font-size:16px}
 .card{background:var(--card);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:18px;padding:12px 14px;margin:10px 0;position:relative;overflow:hidden}
 .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--svob)}
 .card.s-rabota::before{background:var(--rabota)}.card.s-utv::before{background:var(--utv)}.card.s-vyshla{opacity:.6}.card.s-vyshla::before{background:var(--vyshla)}
-.card.s-utv{background:linear-gradient(135deg,rgba(255,43,214,.12),var(--card))}
+.card.s-utv{background:rgba(255,43,214,.06);border-color:rgba(255,43,214,.3)}
 .card .num{font-size:12px;color:var(--mut)}.card .t{font-weight:700;margin:2px 0 6px}.meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:13px;color:var(--mut)}
 .chip{display:inline-block;font-size:12px;font-weight:700;padding:2px 9px;border-radius:99px;background:var(--line);color:var(--fg)}
 .chip.s-svob{background:rgba(46,91,255,.15);color:var(--blue)}
@@ -35,20 +35,20 @@ details.txt{margin:10px 0 0;border-top:1px dashed var(--line);padding-top:8px}de
 .nash{margin-top:6px;font-size:15px}.nash blockquote{border-left-color:var(--blue);background:rgba(46,91,255,.06)}details.razbor>summary{color:var(--mut);font-size:14px}
 .node{background:var(--card);backdrop-filter:blur(10px);border:1px solid var(--line);border-radius:20px;padding:14px}.node>summary{list-style:none;display:grid;grid-template-columns:38px 1fr;gap:2px 12px;align-items:center}
 .node>summary::-webkit-details-marker{display:none}
-.ln-n{grid-row:span 3;width:38px;height:38px;border-radius:12px;background:linear-gradient(135deg,var(--fux),var(--blue));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800}
-.ln-t{font-weight:800}.ln-c{font-size:13px;color:var(--mut)}.bar{display:flex;height:7px;border-radius:4px;overflow:hidden;background:var(--line)}.bar i{display:block}
+.ln-n{grid-row:span 3;width:38px;height:38px;border-radius:12px;background:rgba(255,43,214,.08);border:1px solid rgba(255,43,214,.3);color:var(--fux);display:flex;align-items:center;justify-content:center;font-weight:600;font-size:15px}
+.ln-t{font-weight:600}.ln-c{font-size:13px;color:var(--mut)}.bar{display:flex;height:7px;border-radius:4px;overflow:hidden;background:var(--line)}.bar i{display:block}
 .bar i.s-svob{background:var(--svob)}.bar i.s-rabota{background:var(--rabota)}.bar i.s-utv{background:var(--utv)}.bar i.s-vyshla{background:var(--vyshla)}
 .tree{list-style:none;padding:0;margin:12px 0 0;border-left:2px solid var(--line)}.tree li{padding:7px 0 7px 14px;position:relative}.tree li::before{content:"";position:absolute;left:0;top:18px;width:10px;border-top:2px solid var(--line)}
 .tiles{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));margin-top:16px}
 .tile{display:flex;flex-direction:column;gap:4px;padding:22px;border-radius:22px;background:var(--card);backdrop-filter:blur(10px);border:1px solid var(--line);color:var(--fg);text-decoration:none}
-.tile:nth-child(1){background:linear-gradient(135deg,rgba(255,43,214,.18),var(--card))}.tile:nth-child(2){background:linear-gradient(135deg,rgba(46,91,255,.18),var(--card))}.tile:nth-child(3){background:linear-gradient(135deg,rgba(155,226,45,.25),var(--card))}
+.tile:nth-child(1){border-color:rgba(255,43,214,.3)}.tile:nth-child(2){border-color:rgba(46,91,255,.3)}.tile:nth-child(3){border-color:rgba(155,226,45,.45)}
 .tile .ic{font-size:30px}.tile small{color:var(--mut)}.sub,.upd{color:var(--mut);font-size:14px}
 #lock{max-width:360px;margin:20vh auto;padding:16px;text-align:center}#lock input{width:100%;padding:12px;font-size:17px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--fg);margin:12px 0}
 #lock button{padding:10px 20px;font-size:16px;border-radius:10px;border:0;background:var(--fg);color:var(--bg)}#err{color:#c44;min-height:1.4em}</style>
 <script src="https://telegram.org/js/telegram-web-app.js"></script></head><body>
 <div id="app"></div><form id="lock" hidden><h1>🔒 Панель</h1><input id="pw" type="password" placeholder="Пароль" autocomplete="current-password"><button>Открыть</button><p id="err"></p></form>
 <script>
-const D={s:"UUrmhN7c5z3iH3tr0K+erA==",v:"6W5CeGNVC88i1f2v",c:"LPNYYYTkc4QG/kKxs95u2UHJo6g/CS/z8jb96YEa6M23BeiyZSiMuOo5zALTKuqdNsfk5/DFGWZyjXtHhbBTHSg7+5YDOWZe02On4em0uH2emQPYT/5H70HArAH/AcyT7xDBOVLBtwcAn8LsWZssG6kSfQwMl8x6Ms5TMhmTOkb0/W9F1Xf/9ELnLsILNephS9QqOTNVCqtt8dp2AZJxkflNQKBv6jZwtXWl5p1NJbLTNAyNPM8JlOaE4QsOxaWnQz9o8DkUuQ4Eb5SsYd4YqaSec6QiNjuKun32ZLIPmCrkUq3t6S9HWJqyY7vVdmaORysFIUdhktrKbjZjyjB+34b+YHRjM2gBGTBo6OIXE7xLJmz4lxuy7pL2tPGkpCOdwYmtlsNDMOKFKXHOVCTOxfj+W8KOhzadtQQ/xub03MrpSZAnBNiaFJIssmgq3m1vrq9MO4vwy1D8U+t1LFu038mn8RgbCEZxamieDnAc1x75M3AoJIiLKJIXSFLBE7ldZXtc2ILL8cBUCLDFYKNjSu+xiFQoO6YX4E9Wo0I2cj8q/j0UhyXW25f99OuGSMmMmW3gqaDlddeq39YfDQg90YCa5UoH2x8zqgz9Zz8DvwXYG4hiGMKjldDK39tf1hsls3u3XI0JqR5m8EZLiQN0eXea1VVwPs598rBd40QQncmwj2nDt/nDyRvTng+yoixnlzNsxYkIlJKti065ZArJstVaoZVnu56gMEQMzZZao0/NrhuxB5YCf0JNiK9+AX6Tt3DlbRNdjjDgsiQJ9UoVVqnn1qMkZKk9KRKWpWlNRYuHcQTfwr1+2bKVxT/sy5A+JUTkdMvTN88MI8+IdYcyI9BbyEudNckWIjN7MvMA+Wdvm53Yqz2sJu9n+GS5/SXRB8LwC8reWpZAQ0kpgtsk6VhpB7PNr2ueJ3P5GUvmKs18wab5/czJIjoBc2slgiYGPsSkkxRpw82p7Mdw0Uo01xN0Yb6ZZWqYISN5IeYW7DmWGfF1eCQIFdxAEUOwVtkakugx187Qh5fgLxcnio6fSOeuFbfIWoaxogIRjlXR9Zzv5I0JASW+CPTSTCza25pbTLHNG9SYyH+8eDNRxPPI04MM23GQ1ek9hcpgDyOiHqS0F8qwDx/MBeUe1gbmTCled2RSsnZx5Tg=",n:150000};
+const D={s:"6pmxaTx205hHdTxBXSH2CA==",v:"GWaHilc7wnZ/2VjG",c:"sSV/7F0mFUGGIlBGNwwayiqjK5ukqKVJFn5i4AOtFucA3yTkT8xyXKwIcQz0KC5lpamqyweolRsO5mBMyCRb+r/3+XsxcH1euQWWGYQNsShWQjVzm6HMGc2Q0F6iKXu1uC0kIQyCfx28JJT6f13KIXHRXVOF0tb4B12FR/XeKWnZdCKcPVvYeuu0rNVAnW2COIjaMZhCPrnZPRUkEp+jGVjPcNjUFbC5RwPOXt76bDLvckxvK7w0b2tzINrLTXX22wKBhucvLryBRliTUwB3dNxRa2yTFfob+hLSyQEbn0Zfvb7GURctRMqnGDpkapaB3ytSTMAuNGcwU7ZvzRyf4F/0khdb5OfEyY0uJd6QjvY/d8tPWa11jqpCZgBVPv0ZeDc5EIAWMXq1uKwQVXYk1rC6/B6GbNEU0veAzaKc1tkTZUx74ELTNAkjNQm3/wEaXr3AvPQr/WnVaPfYduJC+REWhwT8tVX5zQZZn1rx06US0Ksz0eYeSjhiI3JMEnRr9lZ0wtQMNRgjGLx/AbzbuzGNhn3+HrmFuxBS+eRhN18RsqvwITAFXCBoNM6dtgPdOU4qrN1oUkv6+B8PkRiO72DMkGuAt1TILYVxb+7wi9kcpoVCbCLyNa8VJxik0/oI0TXyQdmMhXMjIDWh3LPtoaM+5Ck5Mdy2n/sddOL0H80gHBeN0Am5oDk+lKnrC8ZC5WiAa1Va8R9EoMe9jtBok7nQ3m2oy/4KhbV3Td+OwMhO3D5mWfHt73rY2lgkBxhPbFKD5etd4E1ydXPYZOMfyfMaYFVSOADvlKS9DUClZfSYB9QnmR4XEviOJiSl2njox8f7HDc0dv+3eQddKrGNHvqjVcE9ohRHDk1o5Cx61lc0roV1NRUMFgvtqgp1nqP6MP4Ju3KLgB5oxWurV4EHW3x1TZvj1Fl9EG2aMxxesi5ArzYBoYKdMquAljx6DxaxXfukxvgiBXxpEym1ViptAjFvTYyIWbrS77f4UYRRuO172A+uYCDy+84H9QYo3pFnktOSvG2NOfLzvzXWfS0I16igOzDVDMwtwmKjnl2+iN36mLc8Uuj3jc/hE51IrTpJSD4qd8mUMXkp5ooRC5cCm2DX49QrAnPpdt3YwmIiKPYQwhKVuHjlvTeiY+7RB8A7KUAFixiKx10=",n:150000};
 const b=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
 async function open_(p){const k=await crypto.subtle.importKey("raw",new TextEncoder().encode(p),"PBKDF2",false,["deriveKey"]);
 const key=await crypto.subtle.deriveKey({name:"PBKDF2",salt:b(D.s),iterations:D.n,hash:"SHA-256"},k,{name:"AES-GCM",length:256},false,["decrypt"]);
